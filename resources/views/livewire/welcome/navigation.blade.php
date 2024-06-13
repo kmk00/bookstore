@@ -3,11 +3,11 @@
     <a href="{{ url('/') }}" class="text-black font-semibold">Home</a>
     
     @auth
-        <a href="{{ url('/about-us') }}"
+        <a href="{{ url('/store') }}"
             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">
             Store
         </a>
-        <a href="{{ url('/store') }}"
+        <a href="{{ url('/about-us') }}"
             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">
             About Us
         </a>
