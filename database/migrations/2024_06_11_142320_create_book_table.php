@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('publisher');
             $table->date('created');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('genres');
             $table->string('language');
             $table->integer('pages');

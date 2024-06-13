@@ -23,7 +23,6 @@ class BookFactory extends Factory
             'description' => $this->faker->sentence(),
             'publisher' => $this->faker->sentence(),
             'created' => $this->faker->date(),
-            'image' => '/images/book-cover-placeholder.png',
             'genres' => $this->faker->text(),
             'language' => $this->faker->text(),
             'pages' => $this->faker->numberBetween(100, 500),
