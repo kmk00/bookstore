@@ -17,7 +17,7 @@
 
 <body class="antialiased font-sans">
     <header class="bg-gray-100 relative">
-        <img class="absolute top-0 w-full z-0" src="{{ asset('images/bg-wave.svg') }}" alt="" srcset="">
+        {{-- <img class="absolute top-0 w-full z-0" src="{{ asset('images/bg-wave.svg') }}" alt="" srcset=""> --}}
         <div class="relative z-10 p-2">
             @if (Route::has('login'))
                 <livewire:welcome.navigation />
@@ -33,9 +33,9 @@
                 Welcome to our bookstore app
             </h1>
         </div>
-        @livewire('welcome.book-search')
+        <livewire:welcome.book-search />
     </div>
-    <main class="relative z-10 my-40 max-w-7xl mx-auto p-2">
+    <main class="mb-20 max-w-7xl mx-auto p-2">
       @livewire('welcome.book-display')
     </main>
 
