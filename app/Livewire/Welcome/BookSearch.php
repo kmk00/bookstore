@@ -8,7 +8,7 @@ use Livewire\Component;
 class BookSearch extends Component
 {
 
-    public $search = 'se';
+    public $search = '';
 
 
 
