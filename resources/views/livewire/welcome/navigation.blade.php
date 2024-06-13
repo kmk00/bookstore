@@ -1,4 +1,7 @@
 <nav class="flex flex-1 gap-4 mr-4 items-center justify-end">
+
+    <a href="{{ url('/') }}" class="text-black font-semibold">Home</a>
+    
     @auth
         <a href="{{ url('/about-us') }}"
             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">

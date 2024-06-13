@@ -16,7 +16,7 @@
 
     <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 p-2">
         @foreach ($books as $book)
-            <div>
+            <a target="_blank" href="{{ route('book', $book->id) }}">
                 <img src="{{ $book->image ? asset('storage/' . $book->image) : asset('images/book-cover-placeholder.png') }}" alt="Book">
 
                 <div class="w-fit">
@@ -32,7 +32,7 @@
                         ${{ $book->price }}
                     </p>
                 </div>
-            </div>
+            </a>
         @endforeach
     </div>
 </div>

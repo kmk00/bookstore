@@ -21,10 +21,10 @@ class BookFactory extends Factory
             'title' => $this->faker->sentence(),
             'authors' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            'publisher' => $this->faker->sentence(),
+            'publisher' => $this->faker->name(),
             'created' => $this->faker->date(),
-            'genres' => $this->faker->text(),
-            'language' => $this->faker->text(),
+            'genres' => 'horror,sci-fi,adventure',
+            'language' => 'ENG',
             'pages' => $this->faker->numberBetween(100, 500),
             'price' => $this->faker->numberBetween(100, 500),
             
