@@ -35,7 +35,7 @@
         </div>
         <livewire:welcome.book-search />
     </div>
-    <main class="mb-20 max-w-7xl mx-auto p-2">
+    <main class="my-20 max-w-7xl mx-auto p-2">
       @livewire('welcome.book-display')
     </main>
 
