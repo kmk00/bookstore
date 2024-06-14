@@ -19,6 +19,7 @@
                         @endforeach
                     </div>
                     <button
+                        wire:click="addToCart()"
                         class="bg-primary hover:bg-primary/80  transition duration-100 ease-in text-white font-bold py-2 px-4 rounded">
                         Add to cart
                     </button>
@@ -60,3 +61,12 @@
         <p>No book has been found</p>
     @endif
 </div>
+
+
+{{-- 
+    Todo: 
+
+    - Message to user if book has been added to cart
+    - Disable button when request is in progress
+
+--}}
