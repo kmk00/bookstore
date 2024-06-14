@@ -25,6 +25,7 @@ class BookFactory extends Factory
             'created' => $this->faker->date(),
             'genres' => 'horror,sci-fi,adventure',
             'language' => 'ENG',
+            'quantityAvailable' => $this->faker->numberBetween(100, 500),
             'pages' => $this->faker->numberBetween(100, 500),
             'price' => $this->faker->numberBetween(100, 500),
             

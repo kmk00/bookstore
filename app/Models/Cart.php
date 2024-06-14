@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Cart extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Book extends Model
         return $this->hasMany(CartItem::class);
     }
 
-    public function order_items()
-    {
-        return $this->hasMany(OrderItem::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
+
 }
