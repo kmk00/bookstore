@@ -6,6 +6,8 @@ Route::view('/', 'welcome');
 
 Route::view('book/{id}', 'book')->name('book');
 
+Route::view('/cart', 'cart')->middleware(['auth'])->name('cart');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');

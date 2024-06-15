@@ -11,7 +11,7 @@
             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">
             About Us
         </a>
-        <a class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]" href="{{ url('/card') }}">
+        <a class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]" href="{{ url('/cart') }}">
             <img src="{{ asset('images/cart.png') }}" alt="Cart" class="w-6 h-6">
         </a>
 
