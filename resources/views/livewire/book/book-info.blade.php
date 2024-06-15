@@ -18,11 +18,17 @@
                             </div>
                         @endforeach
                     </div>
-                    <button
-                        wire:click="addToCart()"
-                        class="bg-primary hover:bg-primary/80  transition duration-100 ease-in text-white font-bold py-2 px-4 rounded">
-                        Add to cart
-                    </button>
+                    @if ($book->quantityAvailable > 0)
+                        <button
+                            wire:loading.attr="disabled"
+                            wire:click="addToCart()"
+                            class="disabled:bg-gray-300 bg-primary hover:bg-primary/80 shadow-md shadow-black/20 transition duration-100 ease-in text-white font-bold py-2 px-4 rounded">
+                            Add to cart
+                        </button>
+                    @else
+                        <p class="text-gray-500">No more books in stock.</p>
+                    @endif
+
                 </div>
             </div>
             <div class="my-4 h-px bg-gray-200"></div>
@@ -44,7 +50,7 @@
                 <h2>Description</h2>
                 <p class="text-gray-500">{{ $book->description }}</p>
                 <div class="my-4 h-px bg-gray-200"></div>
-
+                
                 <div class="flex justify-between">
                     <div>
                         <p class="">{{ $book->created_at }} </p>
@@ -57,16 +63,11 @@
                 </div>
             </div>
         </div>
-    @else
-        <p>No book has been found</p>
-    @endif
-</div>
+        @else
+            <p>No book has been found</p>
+        @endif
 
-
-{{-- 
-    Todo: 
-
-    - Message to user if book has been added to cart
-    - Disable button when request is in progress
-
---}}
+        @if(session()->has('message'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)" class="bg-green-500 text-white p-2 fixed bottom-5 inset-x-0 max-w-3xl mx-auto text-center font-bold shadow-md shadow-black/70 rounded">{{ session('message') }}</div>
+        @endif
+    </div>

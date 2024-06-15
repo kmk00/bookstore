@@ -42,15 +42,12 @@ class BookInfo extends Component
         ]);
 
         // Send message to user
-        session()->flash('message', 'Book added to cart successfully');
-
-        return redirect('/');
+        session()->flash('message', 'Your book has been added to cart successfully!');
         
     }
 
     public function render()
     {
-
         return view('livewire.book.book-info',[
             'book' => Book::find($this->id),
         ]);
