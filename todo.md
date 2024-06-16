@@ -1,6 +1,7 @@
 ## navigation
 
-[] - Prawidłowe wyświetlanie ilości rzeczy w koszyku w nawigacji
+[X] - Prawidłowe wyświetlanie ilości rzeczy w koszyku w nawigacji
+[] - Update liczby po kliknięciu
 
 ## cart page
 
