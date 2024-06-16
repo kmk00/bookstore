@@ -2,6 +2,7 @@
 
 [X] - Prawidłowe wyświetlanie ilości rzeczy w koszyku w nawigacji
 [] - Update liczby po kliknięciu
+[] - uwzglednic quantity w ilosci
 
 ## cart page
 
@@ -16,3 +17,7 @@
 
 [] - Wyswietlanie ksiazek (pagination)
 [] - Zaawansowane filtrowanie
+
+## order
+
+[] - zmiana ilosci ksiazek w magazynie przy tworzeniu zamowienia

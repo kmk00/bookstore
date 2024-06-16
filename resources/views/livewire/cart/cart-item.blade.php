@@ -24,16 +24,16 @@
             <div class="flex items-center gap-2 md:gap-8">
                 <div class="flex md:gap-2 items-center">
                     
-                    <button class="text-xl w-8 text-center md:p-2">+</button>
+                    <button wire:click="incrementQuantity()" class="text-xl w-8 text-center md:p-2">+</button>
                     <p>{{ $cartItem->quantity }}</p>
-                    <button class="text-xl w-8 text-center md:p-2">-</button>
+                    <button wire:click="decrementQuantity()" class="text-xl w-8 text-center md:p-2">-</button>
                 </div>
 
                 <p class="font-bold">
                     ${{ $cartItem->book->price }}
                 </p>
 
-                <button class="text-red-500">
+                <button wire:click="removeItem()" class="text-red-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
