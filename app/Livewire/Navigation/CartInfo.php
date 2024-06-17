@@ -12,6 +12,7 @@ class CartInfo extends Component
     public $totalItems;
 
     #[On('cart-changed')]
+    #[On('cart-item-updated')]
     public function render()
     {
         $this->totalItems = count(session('cart', []));
@@ -26,7 +27,7 @@ class CartInfo extends Component
             return view('livewire.navigation.cart-info');
         }
         
-        $this->totalItems = Cart::where('user_id', $userId)->with('cart_items')->first()->cart_items->count();
+        $this->totalItems = Cart::where('user_id', $userId)->with('cart_items')->first()->cart_items->sum('quantity');
         
         return view('livewire.navigation.cart-info');
     }
