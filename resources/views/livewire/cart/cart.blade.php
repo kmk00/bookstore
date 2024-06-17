@@ -11,7 +11,7 @@
         @endif
         <div>
             <div class="flex items-center justify-end gap-2">
-                <p class="text-3xl font-bold">Total: $43.00</p>
+                <p class="text-3xl font-bold mr-2">Total: {{ $totalPrice }}$</p>
                 <button
                     class="bg-primary hover:bg-primary/80 shadow-md shadow-black/20 transition duration-100 ease-in text-white font-bold py-2 px-4 rounded">
                     Checkout

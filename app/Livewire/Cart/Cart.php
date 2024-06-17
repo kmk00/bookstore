@@ -3,15 +3,17 @@
 namespace App\Livewire\Cart;
 
 use App\Models\Cart as ShoppingCart;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Cart extends Component
 {
 
     public $cartItems = [];
-
+    public $totalPrice;
     
 
+    #[On('cart-item-updated')]
     public function render()
     {
 
@@ -20,6 +22,7 @@ class Cart extends Component
 
         if($userCart){
             $this->cartItems = ShoppingCart::with('cart_items')->with('cart_items.book')->find($userCart[0]->id)->cart_items;
+            $this->totalPrice = $this->cartItems->sum('totalPrice');
         }
 
         

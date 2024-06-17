@@ -16,6 +16,9 @@ class CartItem extends Component
         $this->cartItem->quantity = $this->cartItem->quantity + 1;
         $this->cartItem->totalPrice = $this->cartItem->price * $this->cartItem->quantity;
         $this->cartItem->save();
+
+        $this->dispatch('cart-item-updated');
+
     }
 
     public function decrementQuantity(){
@@ -28,6 +31,8 @@ class CartItem extends Component
         }
 
         $this->cartItem->save();
+
+        $this->dispatch('cart-item-updated');
     }
 
     public function removeItem(){
