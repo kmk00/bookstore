@@ -46,7 +46,7 @@
                         :class="{ 'bg-green-500': clicked, 'bg-primary': !clicked }"
                         class="w-fit disabled:bg-gray-300 hover:bg-primary/80 shadow-md shadow-black/20 transition duration-100 ease-in text-white font-bold py-2 px-4 rounded"
                         wire:click="addToCart({{ $book->id }})">
-                        <p>+</p>
+                        <p>Add to cart</p>
                     </button>
                 </div>
             </div>
