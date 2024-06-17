@@ -43,6 +43,7 @@ class BookInfo extends Component
             'cart_id' => $usersCart->id
         ]);
 
+        $this->dispatch('cart-changed');
         // Send message to user
         session()->flash('message', 'Your book has been added to cart successfully!');
         

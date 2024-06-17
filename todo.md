@@ -6,10 +6,10 @@
 
 ## cart page
 
-[] - Zmiana ilosci ksiazki w koszyku (sprawdzenie ile jest elementow w magazynie)
-[] - Prawidłowe obliczanie cartItem w zaleznosci od ilosci
-[] - Prawidłowe obliczanie wartosci calego koszyka
-[] - usuwanie elementu z koszyka
+[X] - Zmiana ilosci ksiazki w koszyku
+[X] - Prawidłowe obliczanie cartItem w zaleznosci od ilosci
+[X] - Prawidłowe obliczanie wartosci calego koszyka
+[X] - usuwanie elementu z koszyka
 [] - na stronie glownej szybkie dodanie do koszyka
 [] - czyszczenie koszyka
 

@@ -4,15 +4,16 @@ namespace App\Livewire\Navigation;
 
 use App\Models\Cart;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class CartInfo extends Component
 {
 
     public $totalItems;
 
+    #[On('cart-changed')]
     public function render()
     {
-
         $this->totalItems = count(session('cart', []));
 
         $userId = auth()->user()->id;
