@@ -14,7 +14,14 @@ class BookInfo extends Component
     // Book ID
     public $id;
 
-    public function addToCart(){
+    public function addToCart($bookId = null){
+
+
+        if($bookId != null){
+            // bookId passed in Welcome page
+            $this->id = $bookId;
+        }
+        
         $book = Book::find($this->id);
 
         // Check if user is logged in if not redirect to login page
@@ -45,7 +52,8 @@ class BookInfo extends Component
 
         $this->dispatch('cart-changed');
         // Send message to user
-        session()->flash('message', 'Your book has been added to cart successfully!');
+        session()->flash('message', $book->title . ' has been added to cart successfully!');
+
         
     }
 

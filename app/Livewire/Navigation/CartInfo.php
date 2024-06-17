@@ -19,6 +19,13 @@ class CartInfo extends Component
         $userId = auth()->user()->id;
         
         //count number of items in cart
+        $cart = Cart::where('user_id', $userId)->first();
+
+        if(!$cart) {
+            $this->totalItems = 0;
+            return view('livewire.navigation.cart-info');
+        }
+        
         $this->totalItems = Cart::where('user_id', $userId)->with('cart_items')->first()->cart_items->count();
         
         return view('livewire.navigation.cart-info');

@@ -2,8 +2,10 @@
 
 namespace App\Livewire\Welcome;
 
+use App\Livewire\Book\BookInfo;
 use App\Models\Book;
 use Livewire\Component;
+
 
 class BookDisplay extends Component
 {
@@ -11,6 +13,11 @@ class BookDisplay extends Component
     public $books = [];
 
 
+    public function addToCart($id){
+        $object = new BookInfo();
+        $object->addToCart($id);
+        $this->dispatch('cart-changed');
+    }
 
     public function mount()
     {
@@ -28,7 +35,6 @@ class BookDisplay extends Component
             //Get the latest books
             $this->books = Book::take(8)->latest()->get();
         }
-
 
     }
 
