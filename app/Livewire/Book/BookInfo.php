@@ -41,6 +41,21 @@ class BookInfo extends Component
             ]);
         }
 
+
+        // Check if book is already in cart
+        $cartItem = CartItem::where('cart_id', $usersCart->id)->where('book_id', $book->id)->first();
+        if($cartItem){
+            // Update quantity
+            $cartItem->update([
+                'quantity' => $cartItem->quantity + 1,
+                'totalPrice' => $cartItem->price * $cartItem->quantity
+            ]);
+            $this->dispatch('cart-changed');
+            // Send message to user
+            session()->flash('message', $book->title . ' has been added to cart successfully!');
+            return redirect()->route('cart');
+        }
+
         // Create cart item and add into cart
         CartItem::create([
             'book_id' => $book->id,
