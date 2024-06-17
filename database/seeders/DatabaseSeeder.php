@@ -30,20 +30,6 @@ class DatabaseSeeder extends Seeder
             'user_id' => 1
         ]);
 
-        CartItem::factory()->create([
-            'id' => 1,
-            'quantity' => 1,
-            'book_id' => 1,
-            'cart_id' => 1
-        ]);
-
-        CartItem::factory()->create([
-            'id' => 2,
-            'quantity' => 2,
-            'book_id' => 2,
-            'cart_id' => 1
-        ]);
-
         // Write search in tinker to see all Cart items inside cart with id 1
         // $cart = Cart::find(1);
 

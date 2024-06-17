@@ -37,7 +37,9 @@ class BookInfo extends Component
         // Create cart item and add into cart
         CartItem::create([
             'book_id' => $book->id,
+            'price' => $book->price,
             'quantity' => 1,
+            'totalPrice' => $book->price,
             'cart_id' => $usersCart->id
         ]);
 

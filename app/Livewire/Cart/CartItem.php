@@ -14,11 +14,13 @@ class CartItem extends Component
     public function incrementQuantity(){
 
         $this->cartItem->quantity = $this->cartItem->quantity + 1;
+        $this->cartItem->totalPrice = $this->cartItem->price * $this->cartItem->quantity;
         $this->cartItem->save();
     }
 
     public function decrementQuantity(){
         $this->cartItem->quantity = $this->cartItem->quantity - 1;
+        $this->cartItem->totalPrice = $this->cartItem->price * $this->cartItem->quantity;
 
         if($this->cartItem->quantity < 1){
             $this->cartItem->delete();
@@ -36,6 +38,7 @@ class CartItem extends Component
 
     public function render()
     {
+        
         return view('livewire.cart.cart-item');
     }
 

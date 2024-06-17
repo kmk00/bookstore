@@ -27,6 +27,8 @@ return new class extends Migration {
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
+            $table->float('price');
+            $table->float('totalPrice');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->timestamps();
@@ -36,6 +38,8 @@ return new class extends Migration {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
+            $table->float('price');
+            $table->float('totalPrice');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('cart_id')->constrained('carts')->onDelete('cascade');
             $table->timestamps();

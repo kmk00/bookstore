@@ -30,7 +30,7 @@
                 </div>
 
                 <p class="font-bold">
-                    ${{ $cartItem->book->price }}
+                    ${{ $cartItem->totalPrice }}
                 </p>
 
                 <button wire:click="removeItem()" class="text-red-500">
