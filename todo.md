@@ -2,9 +2,9 @@
 
 [X] - Prawidłowe wyświetlanie ilości rzeczy w koszyku w nawigacji
 [X] - Update liczby po kliknięciu
-[] - uwzglednic quantity w ilosci
+[X] - uwzglednic quantity w ilosci
 
-[] - Poprawic dodawanie do koszyka - po dodaniu tej samej ksiazki powinna sie zwiekszac ilosc quantity a nie tworzyc nowy cartItem
+[X] - Poprawic dodawanie do koszyka - po dodaniu tej samej ksiazki powinna sie zwiekszac ilosc quantity a nie tworzyc nowy cartItem
 
 ## cart page
 
@@ -22,4 +22,9 @@
 
 ## order
 
+[] - tworzenie zamowienia
 [] - zmiana ilosci ksiazek w magazynie przy tworzeniu zamowienia
+[] - dodanie metod platnosci
+[] - dodanie systemu kodów rabatowych
+[] - stworzenie gry
+[] - implementacja gry na stronie
