@@ -27,9 +27,7 @@
     
     <div class="max-w-[2000px] mx-auto flex flex-wrap">
         <livewire:store.search-filter />
-        <main class="flex-grow-[999] bg-blue-300 basis-4/6 p-2">
-            
-        </main>
+        <livewire:store.display-books />
         
     </div>
 </body>
