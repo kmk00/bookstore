@@ -12,7 +12,7 @@ class DisplayBooks extends Component
 
     public function render()
     {
-        $books = Book::inRandomOrder()->paginate(6);
+        $books = Book::paginate(20);
         return view('livewire.store.display-books',[
             'books' => $books
         ]);

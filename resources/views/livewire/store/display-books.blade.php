@@ -1,4 +1,4 @@
-<main class="flex-grow-[999] bg-blue-300 basis-4/6 p-2">
+<main class="flex-grow-[999] basis-4/6 p-2">
     <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 p-2">
         @foreach ($books as $book)
             <div class="flex flex-col justify-between">

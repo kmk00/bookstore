@@ -17,18 +17,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        User::factory()->create([
-            'id' => 1,
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'id' => 1,
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     
-        Book::factory(10)->create();
+        Book::factory(40)->create();
 
-        Cart::factory()->create([
-            'id' => 1,
-            'user_id' => 1
-        ]);
+        // Cart::factory()->create([
+        //     'id' => 1,
+        //     'user_id' => 1
+        // ]);
 
         // Write search in tinker to see all Cart items inside cart with id 1
         // $cart = Cart::find(1);
