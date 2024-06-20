@@ -17,7 +17,7 @@
 
 ## store page
 
-[] - Wyswietlanie ksiazek (pagination)
+[X] - Wyswietlanie ksiazek (pagination)
 [] - Zaawansowane filtrowanie
 
 ## order
