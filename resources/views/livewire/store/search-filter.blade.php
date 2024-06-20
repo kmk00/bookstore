@@ -1,26 +1,23 @@
-<div aria-label="Filter" class="bg-red-200 grow basis-64 p-2">
-    <div class="flex justify-between">
-        <p>Filter</p>
-    </div>
+<div aria-label="Filter" class="basis-64 p-2">
     <form class="flex flex-col gap-4">
-        <p>Price</p>
+        <p class="font-bold">Price</p>
         <input class="" placeholder="Min price" type="number" name="priceMin" id="priceMin">
 
 
         <input class="" placeholder="Max price" type="number" name="priceMax" id="priceMax">
 
-        <p>Language</p>
+        <p class="font-bold">Language</p>
         <select class="" name="langueage">
             <option value="English">English</option>
             <option value="French">French</option>
             <option value="Spanish">Spanish</option>
         </select>
 
-        <p>Created</p>
+        <p class="font-bold">Created</p>
         <input class="" type="date" name="dateFrom">
         <input class="" type="date" name="dateTo">
 
-        <p>Publisher</p>
+        <p class="font-bold">Publisher</p>
         <select class="" name="publisher">
             <option value="publisher1">publisher1</option>
             <option value="publisher2">publisher2</option>
