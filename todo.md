@@ -25,6 +25,9 @@
 [] - tworzenie zamowienia
 [] - zmiana ilosci ksiazek w magazynie przy tworzeniu zamowienia
 [] - dodanie metod platnosci
+
+## other
+
 [] - dodanie systemu kodów rabatowych
 [] - stworzenie gry
 [] - implementacja gry na stronie

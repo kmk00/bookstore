@@ -1,9 +1,8 @@
 <div aria-label="Filter" class="basis-64 p-2">
     <form class="flex flex-col gap-4">
+        
         <p class="font-bold">Price</p>
         <input class="" placeholder="Min price" type="number" name="priceMin" id="priceMin">
-
-
         <input class="" placeholder="Max price" type="number" name="priceMax" id="priceMax">
 
         <p class="font-bold">Language</p>

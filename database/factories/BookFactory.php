@@ -16,6 +16,12 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
+        $genre1 = $this->faker->randomElement(['horror', 'sci-fi', 'adventure','action','fantasy','comedy','romance']);
+        $genre2 = $this->faker->randomElement(['horror', 'sci-fi', 'adventure','action','fantasy','comedy','romance']);
+        $genre3 = $this->faker->randomElement(['horror', 'sci-fi', 'adventure','action','fantasy','comedy','romance']);
+        $genreString = implode(',', [$genre1, $genre2, $genre3]);
+
+
 
         return [
             'title' => $this->faker->sentence(),
@@ -23,7 +29,7 @@ class BookFactory extends Factory
             'description' => $this->faker->sentence(),
             'publisher' => $this->faker->name(),
             'created' => $this->faker->date(),
-            'genres' => 'horror,sci-fi,adventure',
+            'genres' => $genreString,
             'language' => 'ENG',
             'quantityAvailable' => $this->faker->numberBetween(100, 500),
             'pages' => $this->faker->numberBetween(100, 500),
