@@ -29,6 +29,13 @@ class DisplayBooks extends Component
 
     public function render()
     {
+        if ($this->tag == 'all') {
+            $books = Book::paginate(24);
+            return view('livewire.store.display-books',[
+                'books' => $books
+            ]);
+        }
+
         $books = Book::where('genres', 'like', '%' . $this->tag . '%')->paginate(24);
         return view('livewire.store.display-books',[
             'books' => $books,
