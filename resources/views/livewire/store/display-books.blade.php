@@ -1,8 +1,8 @@
-<main class="flex-grow-[999] basis-4/6 p-2">
+<main class="flex-grow-[999] basis-0 p-2">
     <h2 class="md:block hidden py-4 text-2xl">Search for your favorite @if ($tag) {{$tag}} @endif  books</h2>
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] xl:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-2">
+    <div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] xl:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 p-2">
         @foreach ($books as $book)
-            <div class="flex flex-col hover:scale-105 transition duration-100 ease-in h-full shadow-md p-2 justify-between">
+            <div class="flex flex-col max-w-[400px] hover:scale-105 transition duration-100 ease-in h-full shadow-md p-2 justify-between">
                 <a target="_blank" href="{{ route('book', $book->id) }}">
                     <img src="{{ $book->image ? asset('storage/' . $book->image) : asset('images/book-cover-placeholder.png') }}" alt="Book">
                     <div class="w-fit">
