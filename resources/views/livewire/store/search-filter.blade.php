@@ -1,5 +1,5 @@
 <div aria-label="Filter" class="basis-64 p-2">
-    <form class="flex flex-col gap-4">
+    <form  @submit.prevent class="flex flex-col gap-4">
         
         <p class="font-bold">Price</p>
         <input wire:model="priceMin" class="" placeholder="Min price" type="number" name="priceMin" id="priceMin">
@@ -31,7 +31,7 @@
         </select>
 
         <div class="mt-4 flex gap-2 mx-auto">
-            <button >Reset</button>
+            <button wire:click.prevent="resetFilter()" >Reset</button>
             <button wire:click.prevent="filter()">Search</button>
         </div>
     </form>

@@ -23,6 +23,17 @@ class SearchFilter extends Component
         $this->dispatch('filter-changed', $this->priceMin, $this->priceMax, $this->language, $this->dateFrom, $this->dateTo, $this->publisher);
     }
 
+    public function resetFilter(){
+        $this->priceMin = '';
+        $this->priceMax = '';
+        $this->language = '';
+        $this->dateFrom = '';
+        $this->dateTo = '';
+        $this->publisher = '';
+
+        $this->dispatch('filter-changed', $this->priceMin, $this->priceMax, $this->language, $this->dateFrom, $this->dateTo, $this->publisher);
+    }
+
     protected function rules()
     {
         return [
