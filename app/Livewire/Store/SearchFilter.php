@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Store;
 
+use App\Models\Book;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -34,8 +35,19 @@ class SearchFilter extends Component
         ];
     }
 
+    public function getBooksLanguageProperty(){
+        return Book::distinct('language')->pluck('language');
+    }
+
+    public function getBooksPublisherProperty(){
+        return Book::distinct('publisher')->pluck('publisher');
+    }
+
     public function render()
     {
-        return view('livewire.store.search-filter');
+        return view('livewire.store.search-filter', [
+            'languages' => $this->getBooksLanguageProperty(),
+            'publishers' => $this->getBooksPublisherProperty()
+        ]);
     }
 }

@@ -18,7 +18,9 @@
 ## store page
 
 [X] - Wyswietlanie ksiazek (pagination)
-[] - Zaawansowane filtrowanie
+[X] - Zaawansowane filtrowanie
+[] - Pobranie wszystkich jezykow ksiazek oraz wydawcow do filtrowania
+[] - wyswietlenie i pobranie jezykow i wydawcow po kliknieciu przycisku filtrowania
 
 ## order
 
