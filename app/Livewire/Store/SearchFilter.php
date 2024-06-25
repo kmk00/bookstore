@@ -3,8 +3,6 @@
 namespace App\Livewire\Store;
 
 use App\Models\Book;
-use Livewire\Attributes\Url;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class SearchFilter extends Component
