@@ -7,6 +7,9 @@
                 <livewire:cart.cart-item :key="$cartItem->id" :cartItem="$cartItem" />
             @endforeach
             <div class="flex-col items-end flex gap-2 mt-4">
+                @if (session()->has('coupon-success'))
+                    <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)" class="text-green-500 text-right">{{ session('coupon-success') }}</p>
+                @endif
                 <livewire:coupon.coupon />
                 <div class="flex items-center justify-end gap-2">
                     <p class="text-3xl font-bold mr-2">Total: {{ $totalPrice }}$</p>

@@ -3,6 +3,7 @@
 namespace App\Livewire\Cart;
 
 use App\Models\Cart as ShoppingCart;
+use App\Models\CouponUsage;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -23,20 +24,30 @@ class Cart extends Component
     }
 
     #[On('coupon-applied')]
-    public function couponApplied($coupon){
+    public function addDiscount($coupon){
         
-
+        if(!$coupon){
+            return;
+        }
+        
         if ($coupon['amount_percentage'] !== null) {
             $this->totalPrice = $this->totalPrice * (1 - $coupon['amount_percentage'] / 100);
         } 
-
+        
         if ($coupon['discount'] !== null) {
             $this->totalPrice = $this->totalPrice - $coupon['discount'];
         }
+        
+        $userId = auth()->user()->id;
+        
+        CouponUsage::create([
+            'coupon_id' => $coupon['id'],
+            'user_id' => $userId,
+        ]);
 
-
+        session()->flash('coupon-success', 'Coupon applied successfully');
     }
-
+  
     
     #[On('cart-item-updated')]
     public function render()

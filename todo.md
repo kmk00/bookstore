@@ -14,10 +14,13 @@
 [X] - usuwanie elementu z koszyka
 [X] - na stronie glownej szybkie dodanie do koszyka
 [X] - czyszczenie koszyka
+[X] - Stworzenie ui do wpisania kuponu
 
-[] - Stworzenie ui do wpisania kuponu
+## coupon
+
 [] - obliczenie nowej ceny po znnizce
 [] - przypisanie kuponu do uzytkownika
+[] - kupon moze byc wykorzystany tylko raz
 
 ## store page
 
@@ -42,3 +45,9 @@
 
 [] - Pobranie wszystkich jezykow ksiazek oraz wydawcow do filtrowania
 [] - wyswietlenie i pobranie jezykow i wydawcow po kliknieciu przycisku filtrowania
+
+## admin panel
+
+[] - zarzadzanie kuponami
+[] - dodawanie/usuwanie/edycja nowych produktow
+[] -

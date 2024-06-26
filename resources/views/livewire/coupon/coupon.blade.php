@@ -15,4 +15,5 @@
     @if (session()->has('error'))
         <p class="text-red-500 text-right">{{ session('error') }}</p>
     @endif
+
 </div>

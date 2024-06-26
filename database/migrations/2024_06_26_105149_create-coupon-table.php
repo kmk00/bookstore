@@ -16,12 +16,18 @@ return new class extends Migration {
             $table->string('code')->unique();
             $table->decimal('discount', 5, 2)->nullable();
             $table->decimal('amount_percentage', 5, 2)->nullable();
-            $table->integer('usage_limit')->nullable();
-            $table->integer('max_usage')->nullable();
             $table->timestamp('valid_from')->nullable();
             $table->timestamp('valid_until')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('coupon_usages', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('coupon_id')->constrained('coupons')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -29,6 +35,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
+        Schema::dropIfExists('coupon_usages');
+        Schema::dropIfExists('coupon_usage');
         Schema::dropIfExists('coupons');
     }
 };
