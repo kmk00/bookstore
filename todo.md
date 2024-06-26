@@ -19,8 +19,6 @@
 
 [X] - Wyswietlanie ksiazek (pagination)
 [X] - Zaawansowane filtrowanie
-[] - Pobranie wszystkich jezykow ksiazek oraz wydawcow do filtrowania
-[] - wyswietlenie i pobranie jezykow i wydawcow po kliknieciu przycisku filtrowania
 
 ## order
 
@@ -33,3 +31,10 @@
 [] - dodanie systemu kodów rabatowych
 [] - stworzenie gry
 [] - implementacja gry na stronie
+
+## dodatkowe
+
+### store
+
+[] - Pobranie wszystkich jezykow ksiazek oraz wydawcow do filtrowania
+[] - wyswietlenie i pobranie jezykow i wydawcow po kliknieciu przycisku filtrowania
