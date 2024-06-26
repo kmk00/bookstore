@@ -19,6 +19,8 @@ class Cart extends Component
         $cart = ShoppingCart::where('user_id', $userId)->first();
 
         $cart->cart_items()->delete();
+        $cart->totalPrice = null;
+        $cart->save();
         
         return redirect()->route('cart');
     }
@@ -29,13 +31,19 @@ class Cart extends Component
         if(!$coupon){
             return;
         }
+
+        $cart = ShoppingCart::where('user_id', auth()->user()->id)->first();
         
         if ($coupon['amount_percentage'] !== null) {
-            $this->totalPrice = $this->totalPrice * (1 - $coupon['amount_percentage'] / 100);
+            // $this->totalPrice = $this->totalPrice * (1 - $coupon['amount_percentage'] / 100);
+            $cart->totalPrice = $cart->totalPrice * (1 - $coupon['amount_percentage'] / 100);
+            $cart->save();
         } 
         
         if ($coupon['discount'] !== null) {
-            $this->totalPrice = $this->totalPrice - $coupon['discount'];
+            // $this->totalPrice = $this->totalPrice - $coupon['discount'];
+            $cart->totalPrice = $cart->totalPrice - $coupon['discount'];
+            $cart->save();
         }
         
         $userId = auth()->user()->id;
@@ -59,7 +67,7 @@ class Cart extends Component
 
         if($userCart->count() > 0){
             $this->cartItems = ShoppingCart::with('cart_items')->with('cart_items.book')->find($userCart[0]->id)->cart_items;
-            $this->totalPrice = $this->cartItems->sum('totalPrice');
+            $this->totalPrice = $userCart[0]->totalPrice; 
             return view('livewire.cart.cart', [
                 'cartItems' => $this->cartItems,
             ]);
