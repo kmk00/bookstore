@@ -21,8 +21,23 @@ class Cart extends Component
         
         return redirect()->route('cart');
     }
-    
 
+    #[On('coupon-applied')]
+    public function couponApplied($coupon){
+        
+
+        if ($coupon['amount_percentage'] !== null) {
+            $this->totalPrice = $this->totalPrice * (1 - $coupon['amount_percentage'] / 100);
+        } 
+
+        if ($coupon['discount'] !== null) {
+            $this->totalPrice = $this->totalPrice - $coupon['discount'];
+        }
+
+
+    }
+
+    
     #[On('cart-item-updated')]
     public function render()
     {
