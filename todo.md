@@ -18,9 +18,11 @@
 
 ## coupon
 
-[] - obliczenie nowej ceny po znnizce
-[] - przypisanie kuponu do uzytkownika
-[] - kupon moze byc wykorzystany tylko raz
+[X] - obliczenie nowej ceny po znnizce
+[X] - przypisanie kuponu do uzytkownika
+[X] - kupon moze byc wykorzystany tylko raz
+[] - Wypisac uyzyte kupony
+[] - sprawdzenie czy kupon jest aktualny
 
 ## store page
 
@@ -32,12 +34,6 @@
 [] - tworzenie zamowienia
 [] - zmiana ilosci ksiazek w magazynie przy tworzeniu zamowienia
 [] - dodanie metod platnosci
-
-## other
-
-[] - dodanie systemu kodów rabatowych
-[] - stworzenie gry
-[] - implementacja gry na stronie
 
 ## dodatkowe
 
@@ -51,3 +47,9 @@
 [] - zarzadzanie kuponami
 [] - dodawanie/usuwanie/edycja nowych produktow
 [] -
+
+## other
+
+[] - dodanie systemu kodów rabatowych
+[] - stworzenie gry
+[] - implementacja gry na stronie

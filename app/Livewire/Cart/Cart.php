@@ -12,6 +12,7 @@ class Cart extends Component
 
     public $cartItems = [];
     public $totalPrice;
+    public $usedCoupons = [];
 
     public function clearCart(){
 
@@ -68,13 +69,19 @@ class Cart extends Component
         if($userCart->count() > 0){
             $this->cartItems = ShoppingCart::with('cart_items')->with('cart_items.book')->find($userCart[0]->id)->cart_items;
             $this->totalPrice = $userCart[0]->totalPrice; 
+            $this->usedCoupons = CouponUsage::where('user_id', auth()->user()->id)->with('coupon')->get();
+
+
+
             return view('livewire.cart.cart', [
                 'cartItems' => $this->cartItems,
+                'usedCoupons' => $this->usedCoupons,
             ]);
         }
 
         return view('livewire.cart.cart', [
             'cartItems' => $this->cartItems,
+            'usedCoupons' => $this->usedCoupons,
         ]);
 
         
