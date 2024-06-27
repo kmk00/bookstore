@@ -19,9 +19,18 @@ class Cart extends Component
         $userId = auth()->user()->id;
         $cart = ShoppingCart::where('user_id', $userId)->first();
 
+        // Delete cart items
         $cart->cart_items()->delete();
+        
+        // Reset total price
         $cart->totalPrice = null;
         $cart->save();
+
+        // Delete used coupons
+        $usedCoupons = CouponUsage::where('user_id', auth()->user()->id)->with('coupon')->get();
+        foreach ($usedCoupons as $coupon) {
+            $coupon->delete();
+        }
         
         return redirect()->route('cart');
     }

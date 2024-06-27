@@ -21,8 +21,8 @@
 [X] - obliczenie nowej ceny po znnizce
 [X] - przypisanie kuponu do uzytkownika
 [X] - kupon moze byc wykorzystany tylko raz
-[] - Wypisac uyzyte kupony
-[] - sprawdzenie czy kupon jest aktualny
+[X] - Wypisac uyzyte kupony
+[] - sprawdzenie czy kupon jest aktualny (napisac test)
 
 ## store page
 
