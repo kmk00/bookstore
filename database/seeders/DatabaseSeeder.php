@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\Cart;
 use App\Models\CartItem;
+use App\Models\Coupon;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,6 +25,12 @@ class DatabaseSeeder extends Seeder
         ]);
     
         Book::factory(40)->create();
+
+        Coupon::factory(1)->create([
+            'name' => '-50 off',
+            'code' => '50OFF',
+            'discount' => 50,
+        ]);
 
         // Cart::factory()->create([
         //     'id' => 1,

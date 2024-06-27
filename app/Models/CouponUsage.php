@@ -5,22 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class CouponUsage extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'coupon_id',
         'user_id',
-        'totalPrice',
     ];
 
-    public function cart_items()
+    public function coupon()
     {
-        return $this->hasMany(CartItem::class);
+        return $this->belongsTo(Coupon::class);
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-
 }

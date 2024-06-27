@@ -50,6 +50,13 @@ class BookInfo extends Component
                 'quantity' => $cartItem->quantity + 1,
                 'totalPrice' => $cartItem->price * $cartItem->quantity
             ]);
+
+            //Update cart total price
+            $usersCart->update([
+                'totalPrice' => $usersCart->totalPrice + $book->price
+            ]);
+
+
             $this->dispatch('cart-changed');
             // Send message to user
             session()->flash('message', $book->title . ' has been added to cart successfully!');
@@ -63,6 +70,12 @@ class BookInfo extends Component
             'quantity' => 1,
             'totalPrice' => $book->price,
             'cart_id' => $usersCart->id
+        ]);
+
+        
+
+        $usersCart->update([
+            'totalPrice' => $book->price + $usersCart->totalPrice
         ]);
 
         $this->dispatch('cart-changed');
