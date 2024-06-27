@@ -22,7 +22,7 @@
 [X] - przypisanie kuponu do uzytkownika
 [X] - kupon moze byc wykorzystany tylko raz
 [X] - Wypisac uyzyte kupony
-[] - sprawdzenie czy kupon jest aktualny (napisac test)
+[X] - sprawdzenie czy kupon jest aktualny (napisac test)
 
 ## store page
 
