@@ -21,7 +21,7 @@ class Cart extends Component
 
         // Delete cart items
         $cart->cart_items()->delete();
-        
+
         // Reset total price
         $cart->totalPrice = null;
         $cart->save();
@@ -45,13 +45,11 @@ class Cart extends Component
         $cart = ShoppingCart::where('user_id', auth()->user()->id)->first();
         
         if ($coupon['amount_percentage'] !== null) {
-            // $this->totalPrice = $this->totalPrice * (1 - $coupon['amount_percentage'] / 100);
             $cart->totalPrice = $cart->totalPrice * (1 - $coupon['amount_percentage'] / 100);
             $cart->save();
         } 
         
         if ($coupon['discount'] !== null) {
-            // $this->totalPrice = $this->totalPrice - $coupon['discount'];
             $cart->totalPrice = $cart->totalPrice - $coupon['discount'];
             $cart->save();
         }
